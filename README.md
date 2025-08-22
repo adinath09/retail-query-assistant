@@ -64,7 +64,7 @@ Retail-Query-Assistant/
 Run the main script:
 
 ```bash
-python main.py
+streamlit run main.py
 ```
 
 Then enter your queries in plain English, for example:
