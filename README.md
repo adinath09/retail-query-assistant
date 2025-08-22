@@ -1,17 +1,6 @@
 
 <img width="1900" height="775" alt="Screenshot 2025-08-22 234356" src="https://github.com/user-attachments/assets/671b5da5-a761-4994-b5ec-35b95b0b0ec8" />
 
-
-
-* `langchain_helper.py`
-* `few_shot.py`
-* `main.py`
-* `requirements.txt`
-
-Here’s a simple version:
-
----
-
 # Retail Query Assistant
 
 This project is an AI-powered Retail Query Assistant for a fictional T-shirt store that sells Adidas, Nike, Van Heusen, and Levi's T-shirts.
