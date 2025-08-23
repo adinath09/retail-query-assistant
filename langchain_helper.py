@@ -15,7 +15,7 @@ load_dotenv()  # take environment variables from .env (especially GOOGLE_API_KEY
 
 
 def get_few_shot_db_chain():
-    # ✅ Encode password safely
+    
     db_user = "root"
     db_password = urllib.parse.quote_plus("nage@123")  # encodes special chars like @
     db_host = "localhost"
@@ -24,14 +24,14 @@ def get_few_shot_db_chain():
     db_uri = f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}"
     db = SQLDatabase.from_uri(db_uri, sample_rows_in_table_info=3)
 
-    # ✅ Updated LLM (Google Generative AI instead of deprecated GooglePalm)
+
     llm = GoogleGenerativeAI(
         model="gemini-2.5-flash",   # or "models/chat-bison-001"
         google_api_key=os.environ["GOOGLE_API_KEY"],
         temperature=0.1
     )
 
-    # Embeddings + vectorstore
+    
     embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')
     to_vectorize = [" ".join(example.values()) for example in few_shots]
     vectorstore = Chroma.from_texts(to_vectorize, embeddings, metadatas=few_shots)
