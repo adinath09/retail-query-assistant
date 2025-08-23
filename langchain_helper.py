@@ -1,16 +1,14 @@
-from langchain_community.utilities import SQLDatabase
-from langchain.prompts import SemanticSimilarityExampleSelector, FewShotPromptTemplate, PromptTemplate
-from langchain.chains import LLMChain
-from langchain.chains.sql_database.base import BaseSQLDatabaseChain
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
-from langchain.prompts import PromptTemplate
-from langchain.chains.sql_database.prompt import PROMPT_SUFFIX
-from langchain_google_genai import GoogleGenerativeAI
-import os
-from dotenv import load_dotenv
-from few_shots import few_shots
+mport os
 import urllib.parse
+from dotenv import load_dotenv
+import streamlit as st
+
+from langchain_community.utilities import SQLDatabase
+from langchain import LLMChain, PromptTemplate
+from langchain.prompts import FewShotPromptTemplate
+from langchain_google_genai import GoogleGenerativeAI
+from few_shot import few_shots  # Your examples for few-shot learning
+
 
 load_dotenv()  # take environment variables from .env (especially GOOGLE_API_KEY)
 
