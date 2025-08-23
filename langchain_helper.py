@@ -1,5 +1,7 @@
 from langchain_community.utilities import SQLDatabase
-from langchain_experimental.sql import SQLDatabaseChain
+#from langchain_experimental.sql import SQLDatabaseChain
+from langchain_chains.sql_database import SQLDatabaseChain
+
 from langchain.prompts import SemanticSimilarityExampleSelector
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
