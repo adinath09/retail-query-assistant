@@ -1,19 +1,16 @@
 from langchain_community.utilities import SQLDatabase
-from langchain.chains.sql_database import SQLDatabaseChain  # Correct
-from langchain.prompts import SemanticSimilarityExampleSelector
+from langchain.prompts import SemanticSimilarityExampleSelector, FewShotPromptTemplate, PromptTemplate
+from langchain.chains import LLMChain
+from langchain.chains.sql_database.base import BaseSQLDatabaseChain
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
-from langchain.prompts import FewShotPromptTemplate, PromptTemplate
+from langchain.prompts import PromptTemplate
 from langchain.chains.sql_database.prompt import PROMPT_SUFFIX
-
-
-
-from few_shots import few_shots
-
+from langchain_google_genai import GoogleGenerativeAI
 import os
-import urllib.parse
 from dotenv import load_dotenv
-from langchain_google_genai import GoogleGenerativeAI  # ✅ Correct import
+from few_shots import few_shots
+import urllib.parse
 
 load_dotenv()  # take environment variables from .env (especially GOOGLE_API_KEY)
 
