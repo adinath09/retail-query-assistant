@@ -1,4 +1,4 @@
-mport os
+import os
 import urllib.parse
 from dotenv import load_dotenv
 import streamlit as st
