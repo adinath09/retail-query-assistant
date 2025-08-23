@@ -1,11 +1,11 @@
-# langchain_helper.py
 from langchain_community.utilities import SQLDatabase
-from langchain.chains import SQLDatabaseChain  # Use this instead
+from langchain.chains.sql_database import SQLDatabaseChain  # Correct
 from langchain.prompts import SemanticSimilarityExampleSelector
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.prompts import FewShotPromptTemplate, PromptTemplate
 from langchain.chains.sql_database.prompt import PROMPT_SUFFIX
+
 
 
 from few_shots import few_shots
